@@ -1200,7 +1200,7 @@ rmatrixnorm <- function(M, U, V)
      n <- nrow(U)
      k <- ncol(V)
      Z <- matrix(rnorm(n * k), n, k)
-     X <- M + t(chol(U)) %*% Z %*% chol(V)
+     X <- M + chol(U) %*% Z %*% chol(V)
      return(X)
      }
 
